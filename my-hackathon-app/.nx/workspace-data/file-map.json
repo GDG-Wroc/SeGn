@@ -19,210 +19,33 @@
   "fileMap": {
     "nonProjectFiles": [],
     "projectFileMap": {
-      "@my-hackathon-app/source": [
-        {
-          "file": ".editorconfig",
-          "hash": "5443105041930014821"
-        },
-        {
-          "file": ".prettierignore",
-          "hash": "5407418692668764289"
-        },
-        {
-          "file": ".prettierrc",
-          "hash": "16267754514737964994"
-        },
-        {
-          "file": ".vscode/extensions.json",
-          "hash": "13417776046909105611"
-        },
-        {
-          "file": "README.md",
-          "hash": "5041025534884172489"
-        },
-        {
-          "file": "apps/mcp_analogy/README.md",
-          "hash": "11567126394442771924"
-        },
-        {
-          "file": "apps/mcp_analogy/mcp-server/README.md",
-          "hash": "10460879698560160396"
-        },
-        {
-          "file": "apps/mcp_analogy/mcp-server/app/__init__.py",
-          "hash": "4055606894390288348"
-        },
-        {
-          "file": "apps/mcp_analogy/mcp-server/app/core/__init__.py",
-          "hash": "4055606894390288348"
-        },
-        {
-          "file": "apps/mcp_analogy/mcp-server/app/core/config.py",
-          "hash": "7442724319008325285"
-        },
-        {
-          "file": "apps/mcp_analogy/mcp-server/app/core/logger.py",
-          "hash": "16143229613962896251"
-        },
-        {
-          "file": "apps/mcp_analogy/mcp-server/app/main.py",
-          "hash": "14510245444196931391"
-        },
-        {
-          "file": "apps/mcp_analogy/mcp-server/app/services/__init__.py",
-          "hash": "4055606894390288348"
-        },
-        {
-          "file": "apps/mcp_analogy/mcp-server/app/services/analogy_pipeline.py",
-          "hash": "11414826919514740193"
-        },
-        {
-          "file": "apps/mcp_analogy/mcp-server/app/services/llm_client.py",
-          "hash": "905963449021651383"
-        },
-        {
-          "file": "apps/mcp_analogy/mcp-server/app/services/models.py",
-          "hash": "2971245607558514901"
-        },
-        {
-          "file": "apps/mcp_analogy/mcp-server/app/tools/__init__.py",
-          "hash": "1188910067347231424"
-        },
-        {
-          "file": "apps/mcp_analogy/mcp-server/app/tools/analogy.py",
-          "hash": "16932142614523729906"
-        },
-        {
-          "file": "apps/mcp_analogy/mcp-server/pyproject.toml",
-          "hash": "7299645509790320688"
-        },
-        {
-          "file": "apps/mcp_analogy/mcp-server/tests/test_analogy_pipeline.py",
-          "hash": "12820844210301265670"
-        },
-        {
-          "file": "apps/mcp_analogy/mcp-server/uv.lock",
-          "hash": "10626029843412412044"
-        },
-        {
-          "file": "apps/src/backend/.gitignore",
-          "hash": "718397415195286529"
-        },
-        {
-          "file": "apps/src/backend/__init__.py",
-          "hash": "13352332467665266925"
-        },
-        {
-          "file": "apps/src/backend/api/__init__.py",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/src/backend/api/routers/__init__.py",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/src/backend/api/routers/v1.py",
-          "hash": "12198452427557314593"
-        },
-        {
-          "file": "apps/src/backend/api/schemas/__init__.py",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/src/backend/api/schemas/pydantic_schemas.py",
-          "hash": "6898566925109854675"
-        },
-        {
-          "file": "apps/src/backend/dependencies/__init__.py",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/src/backend/dependencies/depends.py",
-          "hash": "12134837075155416122"
-        },
-        {
-          "file": "apps/src/backend/main.py",
-          "hash": "2591747601892127082"
-        },
-        {
-          "file": "apps/src/backend/pyproject.toml",
-          "hash": "17779986882789620121"
-        },
-        {
-          "file": "apps/src/backend/service/__init__.py",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/src/backend/service/analogy_mcp_service.py",
-          "hash": "13764787615260655076"
-        },
-        {
-          "file": "apps/src/backend/service/domain_relevance.py",
-          "hash": "6227783434309161634"
-        },
-        {
-          "file": "apps/src/backend/service/llm_client.py",
-          "hash": "2174958685931576580"
-        },
-        {
-          "file": "apps/src/backend/service/mcp_service.py",
-          "hash": "337744494036466555"
-        },
-        {
-          "file": "apps/src/backend/service/orchestrator.py",
-          "hash": "8202351881629596179"
-        },
-        {
-          "file": "apps/src/backend/service/response_builder.py",
-          "hash": "1789837658128104955"
-        },
-        {
-          "file": "apps/src/backend/service/triz_interpreter.py",
-          "hash": "6572819421249038960"
-        },
-        {
-          "file": "apps/src/backend/tests/test_design_by_analogy_response.py",
-          "hash": "8035980826803638414"
-        },
-        {
-          "file": "apps/src/backend/uv.lock",
-          "hash": "7663229352741649875"
-        },
-        {
-          "file": "eslint.config.mjs",
-          "hash": "9002143704707986394",
-          "deps": [
-            "npm:@nx/eslint-plugin"
-          ]
-        },
-        {
-          "file": "nx.json",
-          "hash": "1648878067754108222"
-        },
-        {
-          "file": "package-lock.json",
-          "hash": "3460098124526365052"
-        },
-        {
-          "file": "package.json",
-          "hash": "15593550292636232539"
-        },
-        {
-          "file": "src/styles/design-tokens.json",
-          "hash": "12824548507895859388"
-        },
-        {
-          "file": "tsconfig.base.json",
-          "hash": "3385014866466956207"
-        }
-      ],
       "my-hackathon-app": [
+        {
+          "file": "apps/my-hackathon-app/.dockerignore",
+          "hash": "17975496255250448830"
+        },
+        {
+          "file": "apps/my-hackathon-app/.env.example",
+          "hash": "2322740052105076701"
+        },
+        {
+          "file": "apps/my-hackathon-app/Dockerfile",
+          "hash": "15742084765378907031"
+        },
+        {
+          "file": "apps/my-hackathon-app/docker-entrypoint.d/40-runtime-config.sh",
+          "hash": "12466127054368368268"
+        },
         {
           "file": "apps/my-hackathon-app/eslint.config.mjs",
           "hash": "10430629524713852104",
           "deps": [
             "npm:@nx/eslint-plugin"
           ]
+        },
+        {
+          "file": "apps/my-hackathon-app/nginx.conf.template",
+          "hash": "5890606783435478306"
         },
         {
           "file": "apps/my-hackathon-app/project.json",
@@ -247,7 +70,7 @@
         },
         {
           "file": "apps/my-hackathon-app/src/app/app.html",
-          "hash": "10313927086155147162"
+          "hash": "8563700537963055868"
         },
         {
           "file": "apps/my-hackathon-app/src/app/app.routes.ts",
@@ -265,7 +88,7 @@
         },
         {
           "file": "apps/my-hackathon-app/src/app/app.ts",
-          "hash": "13732814377544736862",
+          "hash": "7928738385980267857",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/common",
@@ -282,7 +105,7 @@
         },
         {
           "file": "apps/my-hackathon-app/src/index.html",
-          "hash": "595093496026566562"
+          "hash": "13098721635284328121"
         },
         {
           "file": "apps/my-hackathon-app/src/main.ts",
@@ -339,6 +162,243 @@
         {
           "file": "apps/my-hackathon-app-e2e/tsconfig.json",
           "hash": "10781023582241775611"
+        }
+      ],
+      "@my-hackathon-app/source": [
+        {
+          "file": ".dockerignore",
+          "hash": "5712778346892320523"
+        },
+        {
+          "file": ".editorconfig",
+          "hash": "5443105041930014821"
+        },
+        {
+          "file": ".gitignore",
+          "hash": "16647975034223038594"
+        },
+        {
+          "file": ".prettierignore",
+          "hash": "5407418692668764289"
+        },
+        {
+          "file": ".prettierrc",
+          "hash": "16267754514737964994"
+        },
+        {
+          "file": ".vscode/extensions.json",
+          "hash": "13417776046909105611"
+        },
+        {
+          "file": "GCP_CLOUD_RUN_DEPLOYMENT.md",
+          "hash": "14606997458824821312"
+        },
+        {
+          "file": "README.md",
+          "hash": "5041025534884172489"
+        },
+        {
+          "file": "apps/mcp_analogy/.env.example",
+          "hash": "13460788797300163816"
+        },
+        {
+          "file": "apps/mcp_analogy/README.md",
+          "hash": "11567126394442771924"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/.dockerignore",
+          "hash": "16087457338243032504"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/Dockerfile",
+          "hash": "17958984313166168049"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/README.md",
+          "hash": "10460879698560160396"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/__init__.py",
+          "hash": "4055606894390288348"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/core/__init__.py",
+          "hash": "4055606894390288348"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/core/config.py",
+          "hash": "4461473818464784159"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/core/logger.py",
+          "hash": "16143229613962896251"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/main.py",
+          "hash": "14510245444196931391"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/services/__init__.py",
+          "hash": "4055606894390288348"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/services/analogy_pipeline.py",
+          "hash": "11414826919514740193"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/services/llm_client.py",
+          "hash": "905963449021651383"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/services/models.py",
+          "hash": "2971245607558514901"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/tools/__init__.py",
+          "hash": "1188910067347231424"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/tools/analogy.py",
+          "hash": "16932142614523729906"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/pyproject.toml",
+          "hash": "7299645509790320688"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/tests/test_analogy_pipeline.py",
+          "hash": "12820844210301265670"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/uv.lock",
+          "hash": "10626029843412412044"
+        },
+        {
+          "file": "apps/src/backend/.dockerignore",
+          "hash": "16087457338243032504"
+        },
+        {
+          "file": "apps/src/backend/.env.example",
+          "hash": "3309159763524036323"
+        },
+        {
+          "file": "apps/src/backend/.gitignore",
+          "hash": "718397415195286529"
+        },
+        {
+          "file": "apps/src/backend/Dockerfile",
+          "hash": "7873388341859733863"
+        },
+        {
+          "file": "apps/src/backend/__init__.py",
+          "hash": "13352332467665266925"
+        },
+        {
+          "file": "apps/src/backend/api/__init__.py",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/src/backend/api/routers/__init__.py",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/src/backend/api/routers/v1.py",
+          "hash": "12198452427557314593"
+        },
+        {
+          "file": "apps/src/backend/api/schemas/__init__.py",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/src/backend/api/schemas/pydantic_schemas.py",
+          "hash": "6898566925109854675"
+        },
+        {
+          "file": "apps/src/backend/dependencies/__init__.py",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/src/backend/dependencies/depends.py",
+          "hash": "12134837075155416122"
+        },
+        {
+          "file": "apps/src/backend/main.py",
+          "hash": "2591747601892127082"
+        },
+        {
+          "file": "apps/src/backend/pyproject.toml",
+          "hash": "17779986882789620121"
+        },
+        {
+          "file": "apps/src/backend/service/__init__.py",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/src/backend/service/analogy_mcp_service.py",
+          "hash": "11496408095372409242"
+        },
+        {
+          "file": "apps/src/backend/service/domain_relevance.py",
+          "hash": "6227783434309161634"
+        },
+        {
+          "file": "apps/src/backend/service/llm_client.py",
+          "hash": "2174958685931576580"
+        },
+        {
+          "file": "apps/src/backend/service/mcp_service.py",
+          "hash": "8451483262357569361"
+        },
+        {
+          "file": "apps/src/backend/service/orchestrator.py",
+          "hash": "8202351881629596179"
+        },
+        {
+          "file": "apps/src/backend/service/response_builder.py",
+          "hash": "1789837658128104955"
+        },
+        {
+          "file": "apps/src/backend/service/triz_interpreter.py",
+          "hash": "6572819421249038960"
+        },
+        {
+          "file": "apps/src/backend/tests/test_design_by_analogy_response.py",
+          "hash": "8035980826803638414"
+        },
+        {
+          "file": "apps/src/backend/uv.lock",
+          "hash": "7663229352741649875"
+        },
+        {
+          "file": "cloudbuild.yaml",
+          "hash": "4184679641948647384"
+        },
+        {
+          "file": "eslint.config.mjs",
+          "hash": "9002143704707986394",
+          "deps": [
+            "npm:@nx/eslint-plugin"
+          ]
+        },
+        {
+          "file": "nx.json",
+          "hash": "1648878067754108222"
+        },
+        {
+          "file": "package-lock.json",
+          "hash": "3460098124526365052"
+        },
+        {
+          "file": "package.json",
+          "hash": "15593550292636232539"
+        },
+        {
+          "file": "src/styles/design-tokens.json",
+          "hash": "12824548507895859388"
+        },
+        {
+          "file": "tsconfig.base.json",
+          "hash": "3385014866466956207"
         }
       ]
     }
