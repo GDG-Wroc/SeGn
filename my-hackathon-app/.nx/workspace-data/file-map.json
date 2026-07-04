@@ -41,6 +41,70 @@
           "hash": "5041025534884172489"
         },
         {
+          "file": "apps/mcp_analogy/README.md",
+          "hash": "11567126394442771924"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/README.md",
+          "hash": "10460879698560160396"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/__init__.py",
+          "hash": "4055606894390288348"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/core/__init__.py",
+          "hash": "4055606894390288348"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/core/config.py",
+          "hash": "7442724319008325285"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/core/logger.py",
+          "hash": "16143229613962896251"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/main.py",
+          "hash": "14510245444196931391"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/services/__init__.py",
+          "hash": "4055606894390288348"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/services/analogy_pipeline.py",
+          "hash": "11414826919514740193"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/services/llm_client.py",
+          "hash": "905963449021651383"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/services/models.py",
+          "hash": "2971245607558514901"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/tools/__init__.py",
+          "hash": "1188910067347231424"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/app/tools/analogy.py",
+          "hash": "16932142614523729906"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/pyproject.toml",
+          "hash": "7299645509790320688"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/tests/test_analogy_pipeline.py",
+          "hash": "12820844210301265670"
+        },
+        {
+          "file": "apps/mcp_analogy/mcp-server/uv.lock",
+          "hash": "10626029843412412044"
+        },
+        {
           "file": "apps/src/backend/.gitignore",
           "hash": "718397415195286529"
         },
@@ -74,11 +138,11 @@
         },
         {
           "file": "apps/src/backend/dependencies/depends.py",
-          "hash": "10266429511255275410"
+          "hash": "12134837075155416122"
         },
         {
           "file": "apps/src/backend/main.py",
-          "hash": "8432292459951655062"
+          "hash": "2591747601892127082"
         },
         {
           "file": "apps/src/backend/pyproject.toml",
@@ -89,8 +153,16 @@
           "hash": "3244421341483603138"
         },
         {
+          "file": "apps/src/backend/service/analogy_mcp_service.py",
+          "hash": "13764787615260655076"
+        },
+        {
+          "file": "apps/src/backend/service/domain_relevance.py",
+          "hash": "6227783434309161634"
+        },
+        {
           "file": "apps/src/backend/service/llm_client.py",
-          "hash": "9874234033905094574"
+          "hash": "2174958685931576580"
         },
         {
           "file": "apps/src/backend/service/mcp_service.py",
@@ -98,7 +170,19 @@
         },
         {
           "file": "apps/src/backend/service/orchestrator.py",
-          "hash": "15938490471840601853"
+          "hash": "8202351881629596179"
+        },
+        {
+          "file": "apps/src/backend/service/response_builder.py",
+          "hash": "1789837658128104955"
+        },
+        {
+          "file": "apps/src/backend/service/triz_interpreter.py",
+          "hash": "6572819421249038960"
+        },
+        {
+          "file": "apps/src/backend/tests/test_design_by_analogy_response.py",
+          "hash": "8035980826803638414"
         },
         {
           "file": "apps/src/backend/uv.lock",
