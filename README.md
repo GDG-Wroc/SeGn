@@ -1,2 +1,0 @@
-# SeGn
-Team Seksowne Gnojki
