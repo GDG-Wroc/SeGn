@@ -16,6 +16,6 @@ def health():
 
 
 @app.post("/query")
-def post_query(user_input: UserInput, MCP_Service : MCP =Depends(get_mcp)):
-    mcp_response = MCP_Service.send_query_to_mcp(user_input.query)
+async def post_query(user_input: UserInput, MCP_Service : MCP =Depends(get_mcp)):
+    mcp_response = await MCP_Service.send_query_to_mcp(user_input.query)
     return mcp_response
