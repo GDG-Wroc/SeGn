@@ -1,0 +1,189 @@
+substitutions:
+  _REGION: europe-west1
+  _REPOSITORY: hackathon
+  _FRONTEND_SERVICE: my-hackathon-app-frontend
+  _BACKEND_SERVICE: my-hackathon-app-backend
+  _TRIZ_MCP_SERVICE: mcp-triz
+  _ANALOGY_MCP_SERVICE: mcp-analogy
+  _EMBEDDINGS_SERVICE: triz-embeddings
+  _API_BASE_URL: ""
+  _TRIZ_MCP_URL: ""
+  _ANALOGY_MCP_URL: ""
+  _EMBEDDING_SERVICE_URL: ""
+  _LOCAL_LLM_BASE_URL: ""
+  _LOCAL_LLM_MODEL: ""
+  _TRIZ_LLM_BASE_URL: ""
+  _TRIZ_LLM_MODEL: ""
+  _ANALOGY_RESPONSE_LLM_BASE_URL: ""
+  _ANALOGY_RESPONSE_LLM_MODEL: ""
+  _ANALOGY_LLM_BASE_URL: ""
+  _ANALOGY_LLM_MODEL: ""
+  _ANALOGY_LLM_API_KEY: ""
+  _ANALOGY_LLM_ENABLED: "true"
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  substitution_option: ALLOW_LOOSE
+
+steps:
+  - id: build-frontend
+    name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -f
+      - apps/my-hackathon-app/Dockerfile
+      - -t
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_FRONTEND_SERVICE}:$SHORT_SHA
+      - .
+
+  - id: build-backend
+    name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -t
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_BACKEND_SERVICE}:$SHORT_SHA
+      - apps/src/backend
+
+  - id: build-triz-mcp
+    name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -t
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_TRIZ_MCP_SERVICE}:$SHORT_SHA
+      - apps/mcp_triz/mcp-server
+
+  - id: build-analogy-mcp
+    name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -t
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_ANALOGY_MCP_SERVICE}:$SHORT_SHA
+      - apps/mcp_analogy/mcp-server
+
+  - id: build-embeddings
+    name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -t
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_EMBEDDINGS_SERVICE}:$SHORT_SHA
+      - apps/mcp_triz/embeddings
+
+  - id: push-frontend
+    name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_FRONTEND_SERVICE}:$SHORT_SHA
+
+  - id: push-backend
+    name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_BACKEND_SERVICE}:$SHORT_SHA
+
+  - id: push-triz-mcp
+    name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_TRIZ_MCP_SERVICE}:$SHORT_SHA
+
+  - id: push-analogy-mcp
+    name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_ANALOGY_MCP_SERVICE}:$SHORT_SHA
+
+  - id: push-embeddings
+    name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_EMBEDDINGS_SERVICE}:$SHORT_SHA
+
+  - id: deploy-embeddings
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_EMBEDDINGS_SERVICE}
+      - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_EMBEDDINGS_SERVICE}:$SHORT_SHA
+      - --region=${_REGION}
+      - --platform=managed
+      - --allow-unauthenticated
+      - --port=8080
+      - --memory=4Gi
+      - --cpu=2
+      - --timeout=900
+
+  - id: deploy-triz-mcp
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_TRIZ_MCP_SERVICE}
+      - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_TRIZ_MCP_SERVICE}:$SHORT_SHA
+      - --region=${_REGION}
+      - --platform=managed
+      - --allow-unauthenticated
+      - --port=8080
+      - --memory=1Gi
+      - --cpu=1
+      - --timeout=300
+      - --set-env-vars=EMBEDDING_SERVICE_URL=${_EMBEDDING_SERVICE_URL}
+
+  - id: deploy-analogy-mcp
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_ANALOGY_MCP_SERVICE}
+      - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_ANALOGY_MCP_SERVICE}:$SHORT_SHA
+      - --region=${_REGION}
+      - --platform=managed
+      - --allow-unauthenticated
+      - --port=8080
+      - --memory=1Gi
+      - --cpu=1
+      - --timeout=300
+      - --set-env-vars=ANALOGY_LLM_BASE_URL=${_ANALOGY_LLM_BASE_URL},ANALOGY_LLM_MODEL=${_ANALOGY_LLM_MODEL},ANALOGY_LLM_API_KEY=${_ANALOGY_LLM_API_KEY},ANALOGY_LLM_ENABLED=${_ANALOGY_LLM_ENABLED}
+
+  - id: deploy-backend
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_BACKEND_SERVICE}
+      - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_BACKEND_SERVICE}:$SHORT_SHA
+      - --region=${_REGION}
+      - --platform=managed
+      - --allow-unauthenticated
+      - --port=8080
+      - --memory=1Gi
+      - --cpu=1
+      - --timeout=300
+      - --set-env-vars=TRIZ_MCP_URL=${_TRIZ_MCP_URL},ANALOGY_MCP_URL=${_ANALOGY_MCP_URL},LOCAL_LLM_BASE_URL=${_LOCAL_LLM_BASE_URL},LOCAL_LLM_MODEL=${_LOCAL_LLM_MODEL},TRIZ_LLM_BASE_URL=${_TRIZ_LLM_BASE_URL},TRIZ_LLM_MODEL=${_TRIZ_LLM_MODEL},ANALOGY_RESPONSE_LLM_BASE_URL=${_ANALOGY_RESPONSE_LLM_BASE_URL},ANALOGY_RESPONSE_LLM_MODEL=${_ANALOGY_RESPONSE_LLM_MODEL}
+
+  - id: deploy-frontend
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_FRONTEND_SERVICE}
+      - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_FRONTEND_SERVICE}:$SHORT_SHA
+      - --region=${_REGION}
+      - --platform=managed
+      - --allow-unauthenticated
+      - --port=8080
+      - --memory=512Mi
+      - --cpu=1
+      - --set-env-vars=API_BASE_URL=${_API_BASE_URL}
+
+images:
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_FRONTEND_SERVICE}:$SHORT_SHA
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_BACKEND_SERVICE}:$SHORT_SHA
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_TRIZ_MCP_SERVICE}:$SHORT_SHA
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_ANALOGY_MCP_SERVICE}:$SHORT_SHA
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_EMBEDDINGS_SERVICE}:$SHORT_SHA

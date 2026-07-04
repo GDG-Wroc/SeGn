@@ -1,0 +1,13 @@
+node_modules
+dist
+.angular
+.nx
+coverage
+.git
+**/.venv
+**/__pycache__
+**/.pytest_cache
+**/*.pyc
+**/.env
+**/.env.*
+!**/.env.example

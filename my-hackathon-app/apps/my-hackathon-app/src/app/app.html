@@ -24,7 +24,7 @@
   <div *ngIf="runMode" class="notification-bar" [ngClass]="{'fallback-mode': runMode === 'fallback', 'live-mode': runMode === 'live'}">
     <span class="notification-icon">{{ runMode === 'fallback' ? '⚠️' : '⚡' }}</span>
     <span class="notification-text">
-      {{ runMode === 'fallback' ? 'Tryb demonstracyjny offline — Załadowano pełną symulację R&D dla Problemu 7' : 'Połączono z aktywnym backendem (localhost:8000)' }}
+      {{ runMode === 'fallback' ? 'Tryb demonstracyjny offline — Załadowano pełną symulację R&D dla Problemu 7' : 'Połączono z aktywnym backendem' }}
     </span>
   </div>
 

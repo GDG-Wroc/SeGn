@@ -1,3 +1,4 @@
+import os
 from typing import Any
 
 from fastapi import HTTPException
@@ -6,8 +7,8 @@ from fastmcp import Client
 
 class MCP:
 
-    def __init__(self, url: str = "http://localhost:8123/mcp"):
-        self.mcp_uri = url
+    def __init__(self, url: str | None = None):
+        self.mcp_uri = url or os.getenv("TRIZ_MCP_URL", "http://localhost:8123/mcp")
 
     async def list_tools(self) -> list[dict[str, Any]]:
         async with Client(self.mcp_uri) as client:
@@ -58,5 +59,5 @@ class MCP:
 
 
 class AnalogyMCP(MCP):
-    def __init__(self, url: str = "http://localhost:8124/mcp"):
-        super().__init__(url)
+    def __init__(self, url: str | None = None):
+        super().__init__(url or os.getenv("ANALOGY_MCP_URL", "http://localhost:8124/mcp"))

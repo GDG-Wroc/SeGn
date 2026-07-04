@@ -3,6 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
+declare global {
+  interface Window {
+    __APP_CONFIG__?: {
+      API_BASE_URL?: string;
+    };
+  }
+}
+
 @Component({
   imports: [CommonModule, FormsModule],
   selector: 'app-root',
@@ -19,6 +27,7 @@ export class App implements OnInit {
   result: any = null;
   runMode: 'live' | 'fallback' | null = null;
   activeTab: 'triz' | 'analogy' | 'evaluation' = 'triz';
+  private readonly apiBaseUrl = window.__APP_CONFIG__?.API_BASE_URL || 'http://localhost:8000';
 
   constructor(private http: HttpClient) {}
 
@@ -32,7 +41,7 @@ export class App implements OnInit {
     this.result = null;
     this.runMode = null;
 
-    this.http.post('http://localhost:8000/query', { query: this.queryText }).subscribe({
+    this.http.post(`${this.apiBaseUrl}/query`, { query: this.queryText }).subscribe({
       next: (res: any) => {
         this.result = res;
         this.runMode = 'live';

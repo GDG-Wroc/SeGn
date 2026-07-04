@@ -8,8 +8,8 @@ class Config(BaseSettings):
         extra="ignore",
     )
 
-    MCP_HOST: str = "127.0.0.1"
-    MCP_PORT: int = 8124
+    MCP_HOST: str = "0.0.0.0"
+    MCP_PORT: int = 8080
 
     ANALOGY_LLM_BASE_URL: str | None = None
     ANALOGY_LLM_API_KEY: str | None = None
