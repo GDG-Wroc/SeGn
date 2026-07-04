@@ -14,10 +14,16 @@ class LLMClient:
         self,
         base_url: str | None = None,
         model: str | None = None,
+        system_prompt: str | None = None,
         timeout: float = 60.0,
     ):
         self.base_url = (base_url or os.getenv("LOCAL_LLM_BASE_URL") or "http://localhost:1234/v1").rstrip("/")
         self.model = model or os.getenv("LOCAL_LLM_MODEL") or "local-model"
+        self.system_prompt = system_prompt or (
+            "You are an assistant that turns technical MCP responses into short, "
+            "clear user-facing messages in English. Do not invent facts outside "
+            "the provided data. If data is missing, say that clearly."
+        )
         self.timeout = timeout
 
     async def explain_mcp_response(self, user_query: str, mcp_response: Any) -> dict[str, Any]:
@@ -28,8 +34,8 @@ class LLMClient:
         except (httpx.HTTPError, KeyError, ValueError) as exc:
             return {
                 "answer": (
-                    "Nie udalo mi sie polaczyc z lokalnym modelem LLM. "
-                    "Ponizej zwracam surowa odpowiedz z MCP."
+                    "I could not connect to the local LLM. Returning the raw MCP "
+                    "response below."
                 ),
                 "raw_mcp_response": mcp_response,
                 "llm_error": str(exc),
@@ -46,11 +52,7 @@ class LLMClient:
             "messages": [
                 {
                     "role": "system",
-                    "content": (
-                        "Jestes asystentem, ktory zamienia techniczne odpowiedzi MCP "
-                        "na krotkie, zrozumiale komunikaty po polsku. "
-                        "Nie wymyslaj faktow spoza danych. Jesli danych brakuje, powiedz to jasno."
-                    ),
+                    "content": self.system_prompt,
                 },
                 {"role": "user", "content": prompt},
             ],
@@ -68,12 +70,12 @@ class LLMClient:
 
     def _build_prompt(self, user_query: str, mcp_response: Any) -> str:
         return (
-            "Pytanie uzytkownika:\n"
+            "User question:\n"
             f"{user_query}\n\n"
-            "Surowa odpowiedz z MCP:\n"
+            "Raw MCP response:\n"
             f"{self._to_json(mcp_response)}\n\n"
-            "Napisz dla uzytkownika jasna odpowiedz. "
-            "Podsumuj najwazniejsze wyniki i unikaj technicznego JSON-a."
+            "Write a clear English answer for the user. Summarize the most "
+            "important results and avoid exposing technical JSON as the main answer."
         )
 
     def _to_json(self, value: Any) -> str:

@@ -1,15 +1,27 @@
-from fastapi import FastAPI
+import logging
+
+from fastapi import Depends, FastAPI
+
 from backend.api.schemas.pydantic_schemas import UserInput
+from backend.dependencies.depends import (
+    get_analogy_mcp,
+    get_mcp,
+)
+from backend.service.analogy_mcp_service import AnalogyMCP
 from backend.service.mcp_service import MCP
-from backend.service.llm_client import LLMClient
-from backend.dependencies.depends import get_llm_client, get_mcp
-from fastapi import Depends
+from backend.service.orchestrator import MCPOrchestrator
+
+
+logging.basicConfig(level=logging.INFO)
+
 
 def create_app() -> FastAPI:
     app = FastAPI()
     return app
 
+
 app = create_app()
+
 
 @app.get("/")
 def health():
@@ -19,8 +31,8 @@ def health():
 @app.post("/query")
 async def post_query(
     user_input: UserInput,
-    MCP_Service: MCP = Depends(get_mcp),
-    llm_client: LLMClient = Depends(get_llm_client),
+    triz_mcp: MCP = Depends(get_mcp),
+    analogy_mcp: AnalogyMCP = Depends(get_analogy_mcp),
 ):
-    mcp_response = await MCP_Service.send_query_to_mcp(user_input.query)
-    return await llm_client.explain_mcp_response(user_input.query, mcp_response)
+    orchestrator = MCPOrchestrator(triz_mcp=triz_mcp, analogy_mcp=analogy_mcp)
+    return await orchestrator.run(user_input.query)
