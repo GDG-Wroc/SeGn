@@ -1,6 +1,6 @@
 import logging
 
-from fastapi import Depends, FastAPI
+from fastapi import Depends, FastAPI, Query
 
 from backend.api.schemas.pydantic_schemas import UserInput
 from backend.dependencies.depends import (
@@ -31,8 +31,9 @@ def health():
 @app.post("/query")
 async def post_query(
     user_input: UserInput,
+    debug: bool = Query(False),
     triz_mcp: MCP = Depends(get_mcp),
     analogy_mcp: AnalogyMCP = Depends(get_analogy_mcp),
 ):
     orchestrator = MCPOrchestrator(triz_mcp=triz_mcp, analogy_mcp=analogy_mcp)
-    return await orchestrator.run(user_input.query)
+    return await orchestrator.run(user_input.query, debug=debug)
