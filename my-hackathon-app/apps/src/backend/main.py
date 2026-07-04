@@ -1,12 +1,19 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
+from fastapi.middleware.cors import CORSMiddleware
 from backend.api.schemas.pydantic_schemas import UserInput
-from backend.service.mcp_service import MCP
-from backend.service.llm_client import LLMClient
-from backend.dependencies.depends import get_llm_client, get_mcp
-from fastapi import Depends
+from backend.service.mcp_service import MCP, AnalogyMCP
+from backend.service.orchestrator import MCPOrchestrator
+from backend.dependencies.depends import get_mcp, get_analogy_mcp
 
 def create_app() -> FastAPI:
     app = FastAPI()
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
     return app
 
 app = create_app()
@@ -19,8 +26,8 @@ def health():
 @app.post("/query")
 async def post_query(
     user_input: UserInput,
-    MCP_Service: MCP = Depends(get_mcp),
-    llm_client: LLMClient = Depends(get_llm_client),
+    triz_mcp: MCP = Depends(get_mcp),
+    analogy_mcp: AnalogyMCP = Depends(get_analogy_mcp),
 ):
-    mcp_response = await MCP_Service.send_query_to_mcp(user_input.query)
-    return await llm_client.explain_mcp_response(user_input.query, mcp_response)
+    orchestrator = MCPOrchestrator(triz_mcp=triz_mcp, analogy_mcp=analogy_mcp)
+    return await orchestrator.run(user_input.query)

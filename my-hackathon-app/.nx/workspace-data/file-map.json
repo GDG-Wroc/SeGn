@@ -17,109 +17,213 @@
     }
   ],
   "fileMap": {
-    "nonProjectFiles": [
-      {
-        "file": ".editorconfig",
-        "hash": "5443105041930014821"
-      },
-      {
-        "file": ".prettierignore",
-        "hash": "5407418692668764289"
-      },
-      {
-        "file": ".prettierrc",
-        "hash": "16267754514737964994"
-      },
-      {
-        "file": ".vscode/extensions.json",
-        "hash": "13417776046909105611"
-      },
-      {
-        "file": "README.md",
-        "hash": "5041025534884172489"
-      },
-      {
-        "file": "apps/src/backend/.gitignore",
-        "hash": "718397415195286529"
-      },
-      {
-        "file": "apps/src/backend/__init__.py",
-        "hash": "13352332467665266925"
-      },
-      {
-        "file": "apps/src/backend/api/__init__.py",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "apps/src/backend/api/routers/__init__.py",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "apps/src/backend/api/routers/v1.py",
-        "hash": "12198452427557314593"
-      },
-      {
-        "file": "apps/src/backend/api/schemas/__init__.py",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "apps/src/backend/api/schemas/pydantic_schemas.py",
-        "hash": "6898566925109854675"
-      },
-      {
-        "file": "apps/src/backend/dependencies/__init__.py",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "apps/src/backend/dependencies/depends.py",
-        "hash": "5575693388544266703"
-      },
-      {
-        "file": "apps/src/backend/main.py",
-        "hash": "8321080695255721213"
-      },
-      {
-        "file": "apps/src/backend/pyproject.toml",
-        "hash": "17779986882789620121"
-      },
-      {
-        "file": "apps/src/backend/service/__init__.py",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "apps/src/backend/service/llm_client.py",
-        "hash": "12248535485349119587"
-      },
-      {
-        "file": "apps/src/backend/service/mcp_service.py",
-        "hash": "10444113430370326568"
-      },
-      {
-        "file": "apps/src/backend/uv.lock",
-        "hash": "7663229352741649875"
-      },
-      {
-        "file": "eslint.config.mjs",
-        "hash": "9002143704707986394"
-      },
-      {
-        "file": "nx.json",
-        "hash": "1648878067754108222"
-      },
-      {
-        "file": "package-lock.json",
-        "hash": "3460098124526365052"
-      },
-      {
-        "file": "package.json",
-        "hash": "15593550292636232539"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "3385014866466956207"
-      }
-    ],
+    "nonProjectFiles": [],
     "projectFileMap": {
+      "@my-hackathon-app/source": [
+        {
+          "file": ".editorconfig",
+          "hash": "5443105041930014821"
+        },
+        {
+          "file": ".prettierignore",
+          "hash": "5407418692668764289"
+        },
+        {
+          "file": ".prettierrc",
+          "hash": "16267754514737964994"
+        },
+        {
+          "file": ".vscode/extensions.json",
+          "hash": "13417776046909105611"
+        },
+        {
+          "file": "README.md",
+          "hash": "5041025534884172489"
+        },
+        {
+          "file": "apps/src/backend/.gitignore",
+          "hash": "718397415195286529"
+        },
+        {
+          "file": "apps/src/backend/__init__.py",
+          "hash": "13352332467665266925"
+        },
+        {
+          "file": "apps/src/backend/api/__init__.py",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/src/backend/api/routers/__init__.py",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/src/backend/api/routers/v1.py",
+          "hash": "12198452427557314593"
+        },
+        {
+          "file": "apps/src/backend/api/schemas/__init__.py",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/src/backend/api/schemas/pydantic_schemas.py",
+          "hash": "6898566925109854675"
+        },
+        {
+          "file": "apps/src/backend/dependencies/__init__.py",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/src/backend/dependencies/depends.py",
+          "hash": "10266429511255275410"
+        },
+        {
+          "file": "apps/src/backend/main.py",
+          "hash": "8432292459951655062"
+        },
+        {
+          "file": "apps/src/backend/pyproject.toml",
+          "hash": "17779986882789620121"
+        },
+        {
+          "file": "apps/src/backend/service/__init__.py",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/src/backend/service/llm_client.py",
+          "hash": "9874234033905094574"
+        },
+        {
+          "file": "apps/src/backend/service/mcp_service.py",
+          "hash": "337744494036466555"
+        },
+        {
+          "file": "apps/src/backend/service/orchestrator.py",
+          "hash": "15938490471840601853"
+        },
+        {
+          "file": "apps/src/backend/uv.lock",
+          "hash": "7663229352741649875"
+        },
+        {
+          "file": "eslint.config.mjs",
+          "hash": "9002143704707986394",
+          "deps": [
+            "npm:@nx/eslint-plugin"
+          ]
+        },
+        {
+          "file": "nx.json",
+          "hash": "1648878067754108222"
+        },
+        {
+          "file": "package-lock.json",
+          "hash": "3460098124526365052"
+        },
+        {
+          "file": "package.json",
+          "hash": "15593550292636232539"
+        },
+        {
+          "file": "src/styles/design-tokens.json",
+          "hash": "12824548507895859388"
+        },
+        {
+          "file": "tsconfig.base.json",
+          "hash": "3385014866466956207"
+        }
+      ],
+      "my-hackathon-app": [
+        {
+          "file": "apps/my-hackathon-app/eslint.config.mjs",
+          "hash": "10430629524713852104",
+          "deps": [
+            "npm:@nx/eslint-plugin"
+          ]
+        },
+        {
+          "file": "apps/my-hackathon-app/project.json",
+          "hash": "13322008462549797381"
+        },
+        {
+          "file": "apps/my-hackathon-app/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/my-hackathon-app/src/app/app.config.ts",
+          "hash": "9341987335035419398",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "apps/my-hackathon-app/src/app/app.css",
+          "hash": "17035945258654058128"
+        },
+        {
+          "file": "apps/my-hackathon-app/src/app/app.html",
+          "hash": "10313927086155147162"
+        },
+        {
+          "file": "apps/my-hackathon-app/src/app/app.routes.ts",
+          "hash": "6185150965714414910",
+          "deps": [
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/my-hackathon-app/src/app/app.spec.ts",
+          "hash": "16585654716991132397",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/my-hackathon-app/src/app/app.ts",
+          "hash": "13732814377544736862",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "apps/my-hackathon-app/src/app/nx-welcome.ts",
+          "hash": "13202423773670840992",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "apps/my-hackathon-app/src/index.html",
+          "hash": "595093496026566562"
+        },
+        {
+          "file": "apps/my-hackathon-app/src/main.ts",
+          "hash": "3820470197416434450",
+          "deps": [
+            "npm:@angular/platform-browser"
+          ]
+        },
+        {
+          "file": "apps/my-hackathon-app/src/styles.css",
+          "hash": "14842856887700021467"
+        },
+        {
+          "file": "apps/my-hackathon-app/tsconfig.app.json",
+          "hash": "6177249052850704942"
+        },
+        {
+          "file": "apps/my-hackathon-app/tsconfig.json",
+          "hash": "16004134237605501702"
+        },
+        {
+          "file": "apps/my-hackathon-app/tsconfig.spec.json",
+          "hash": "17489296883266577896"
+        }
+      ],
       "my-hackathon-app-e2e": [
         {
           "file": "apps/my-hackathon-app-e2e/eslint.config.mjs",
@@ -151,96 +255,6 @@
         {
           "file": "apps/my-hackathon-app-e2e/tsconfig.json",
           "hash": "10781023582241775611"
-        }
-      ],
-      "my-hackathon-app": [
-        {
-          "file": "apps/my-hackathon-app/eslint.config.mjs",
-          "hash": "10430629524713852104",
-          "deps": [
-            "npm:@nx/eslint-plugin"
-          ]
-        },
-        {
-          "file": "apps/my-hackathon-app/project.json",
-          "hash": "13322008462549797381"
-        },
-        {
-          "file": "apps/my-hackathon-app/public/favicon.ico",
-          "hash": "9303420814833116677"
-        },
-        {
-          "file": "apps/my-hackathon-app/src/app/app.config.ts",
-          "hash": "17072567673578843235",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/my-hackathon-app/src/app/app.css",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/my-hackathon-app/src/app/app.html",
-          "hash": "11987652264972370457"
-        },
-        {
-          "file": "apps/my-hackathon-app/src/app/app.routes.ts",
-          "hash": "6185150965714414910",
-          "deps": [
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/my-hackathon-app/src/app/app.spec.ts",
-          "hash": "16585654716991132397",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "apps/my-hackathon-app/src/app/app.ts",
-          "hash": "7740744529457936677",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/my-hackathon-app/src/app/nx-welcome.ts",
-          "hash": "13202423773670840992",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common"
-          ]
-        },
-        {
-          "file": "apps/my-hackathon-app/src/index.html",
-          "hash": "595093496026566562"
-        },
-        {
-          "file": "apps/my-hackathon-app/src/main.ts",
-          "hash": "3820470197416434450",
-          "deps": [
-            "npm:@angular/platform-browser"
-          ]
-        },
-        {
-          "file": "apps/my-hackathon-app/src/styles.css",
-          "hash": "5195668842064076916"
-        },
-        {
-          "file": "apps/my-hackathon-app/tsconfig.app.json",
-          "hash": "6177249052850704942"
-        },
-        {
-          "file": "apps/my-hackathon-app/tsconfig.json",
-          "hash": "16004134237605501702"
-        },
-        {
-          "file": "apps/my-hackathon-app/tsconfig.spec.json",
-          "hash": "17489296883266577896"
         }
       ]
     }

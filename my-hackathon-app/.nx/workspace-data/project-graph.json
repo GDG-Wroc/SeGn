@@ -356,6 +356,56 @@
         "tags": [],
         "implicitDependencies": []
       }
+    },
+    "@my-hackathon-app/source": {
+      "name": "@my-hackathon-app/source",
+      "type": "app",
+      "data": {
+        "root": ".",
+        "targets": {
+          "lint": {
+            "cache": true,
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/eslint.config.mjs",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "metadata": {
+              "technologies": [
+                "eslint"
+              ],
+              "description": "Runs ESLint on project",
+              "help": {
+                "command": "npx eslint --help",
+                "example": {
+                  "options": {
+                    "max-warnings": 0
+                  }
+                }
+              }
+            },
+            "executor": "nx:run-commands",
+            "options": {
+              "cwd": ".",
+              "command": "eslint ./src"
+            },
+            "configurations": {},
+            "parallelism": true
+          }
+        },
+        "name": "@my-hackathon-app/source",
+        "implicitDependencies": [],
+        "tags": []
+      }
     }
   },
   "externalNodes": {
@@ -11391,7 +11441,19 @@
       },
       {
         "source": "my-hackathon-app",
+        "target": "npm:@angular/forms",
+        "type": "static"
+      },
+      {
+        "source": "my-hackathon-app",
         "target": "npm:@angular/platform-browser",
+        "type": "static"
+      }
+    ],
+    "@my-hackathon-app/source": [
+      {
+        "source": "@my-hackathon-app/source",
+        "target": "npm:@nx/eslint-plugin",
         "type": "static"
       }
     ],
@@ -26203,5 +26265,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1783173724450
+  "computedAt": 1783175141291
 }
