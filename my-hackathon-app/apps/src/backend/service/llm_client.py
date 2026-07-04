@@ -46,27 +46,33 @@ class LLMClient:
             "raw_mcp_response": mcp_response,
         }
 
-    async def _send_chat_completion(self, prompt: str) -> str:
+    async def generate_text(self, prompt: str, system_prompt: str | None = None) -> str:
         payload = {
             "model": self.model,
             "messages": [
                 {
                     "role": "system",
-                    "content": self.system_prompt,
+                    "content": system_prompt or self.system_prompt,
                 },
                 {"role": "user", "content": prompt},
             ],
-            "temperature": 0.2,
+            "temperature": 0.3,
         }
 
         async with httpx.AsyncClient(timeout=self.timeout) as client:
             response = await client.post(f"{self.base_url}/chat/completions", json=payload)
 
         response.raise_for_status()
-
         data = response.json()
-        content = data["choices"][0]["message"]["content"]
-        return content.strip()
+        return data["choices"][0]["message"]["content"].strip()
+
+    async def _send_chat_completion(self, prompt: str) -> str:
+        system_prompt = (
+            "Jestes asystentem, ktory zamienia techniczne odpowiedzi MCP "
+            "na krotkie, zrozumiale komunikaty po polsku. "
+            "Nie wymyslaj faktow spoza danych. Jesli danych brakuje, powiedz to jasno."
+        )
+        return await self.generate_text(prompt, system_prompt)
 
     def _build_prompt(self, user_query: str, mcp_response: Any) -> str:
         return (

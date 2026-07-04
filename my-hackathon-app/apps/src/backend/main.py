@@ -1,6 +1,7 @@
 import logging
 
 from fastapi import Depends, FastAPI, Query
+from fastapi.middleware.cors import CORSMiddleware
 
 from backend.api.schemas.pydantic_schemas import UserInput
 from backend.dependencies.depends import (
@@ -17,6 +18,13 @@ logging.basicConfig(level=logging.INFO)
 
 def create_app() -> FastAPI:
     app = FastAPI()
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
     return app
 
 

@@ -115,10 +115,7 @@ class MCPOrchestrator:
             }
 
         candidates = self._normalize_analogy_candidates(raw_response)
-        logger.info(
-            "Design by Analogy parsed candidate count: %s",
-            len(candidates),
-        )
+        logger.info("Design by Analogy parsed candidate count: %s", len(candidates))
         validation = self.relevance_validator.validate_analogy_candidates(query, candidates)
         logger.info(
             "Design by Analogy validation: valid=%s rejected=%s reasons=%s",
@@ -129,6 +126,7 @@ class MCPOrchestrator:
                 for candidate in validation["irrelevant_candidates"]
             ],
         )
+
         repair_performed = False
         if validation["valid_candidate_count"] < 3:
             repaired_candidates = self._repair_analogy_candidates(query, validation)
@@ -149,21 +147,18 @@ class MCPOrchestrator:
                 validation["repair_performed"] = False
 
         candidates = validation["valid_candidates"]
-        logger.info(
-            "Design by Analogy final frontend candidate count: %s",
-            len(candidates[:3]),
-        )
+        logger.info("Design by Analogy final frontend candidate count: %s", len(candidates[:3]))
         if len(candidates) < 3:
             return {
                 "status": "error",
                 "recommendation": None,
                 "raw_response": raw_response,
                 "error": {
-                        "type": "IrrelevantAnalogyCandidates",
-                        "message": "Design by Analogy MCP returned fewer than 3 candidates relevant to the original problem.",
-                        "domain_relevance": validation,
-                        "repair_performed": repair_performed,
-                    },
+                    "type": "IrrelevantAnalogyCandidates",
+                    "message": "Design by Analogy MCP returned fewer than 3 candidates relevant to the original problem.",
+                    "domain_relevance": validation,
+                    "repair_performed": repair_performed,
+                },
             }
 
         return {
@@ -241,6 +236,7 @@ class MCPOrchestrator:
         for index, template in enumerate(self._generic_analogy_templates(), start=1):
             if template["source_domain"] in existing_domains:
                 continue
+            mapped_solution = self._map_template_to_problem(query, template)
             repaired.append(
                 {
                     "candidate_id": f"ANALOGY-REPAIR-{index}",
@@ -249,8 +245,8 @@ class MCPOrchestrator:
                     "source_analogy": template["source_domain"],
                     "mechanism": template["mechanism"],
                     "transferred_principle": template["principle"],
-                    "solution_description": self._map_template_to_problem(query, template),
-                    "mapped_solution": self._map_template_to_problem(query, template),
+                    "solution_description": mapped_solution,
+                    "mapped_solution": mapped_solution,
                     "why_it_fits_original_problem": (
                         f"It directly addresses the stated problem by applying "
                         f"{template['principle'].lower()} to the target system."

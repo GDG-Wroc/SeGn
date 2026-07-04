@@ -1,2 +1,215 @@
-<app-nx-welcome></app-nx-welcome>
-<router-outlet></router-outlet>
+<div class="app-container">
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-logo">
+      <span class="logo-icon">🌿</span>
+      <div class="logo-text">
+        <h1>SeGn</h1>
+        <p>R&D Inventive Orchestrator</p>
+      </div>
+    </div>
+    <div class="sdg-badges">
+      <span class="sdg-badge sdg-11">
+        <span class="badge-num">11</span>
+        <span class="badge-title">Sustainable Cities</span>
+      </span>
+      <span class="sdg-badge sdg-13">
+        <span class="badge-num">13</span>
+        <span class="badge-title">Climate Action</span>
+      </span>
+    </div>
+  </header>
+
+  <!-- Notification Bar -->
+  <div *ngIf="runMode" class="notification-bar" [ngClass]="{'fallback-mode': runMode === 'fallback', 'live-mode': runMode === 'live'}">
+    <span class="notification-icon">{{ runMode === 'fallback' ? '⚠️' : '⚡' }}</span>
+    <span class="notification-text">
+      {{ runMode === 'fallback' ? 'Tryb demonstracyjny offline — Załadowano pełną symulację R&D dla Problemu 7' : 'Połączono z aktywnym backendem (localhost:8000)' }}
+    </span>
+  </div>
+
+  <!-- Problem Input Panel -->
+  <section class="panel input-panel animate-fade-in">
+    <div class="panel-header">
+      <h2>1. Zdefiniuj Wyzwanie Wynalazcze</h2>
+      <span class="badge-info">Problem 7 (UN SDG)</span>
+    </div>
+    <div class="panel-body">
+      <textarea [(ngModel)]="queryText" placeholder="Opisz problem techniczny..." rows="6" class="custom-textarea" [disabled]="loading"></textarea>
+      <div class="action-row">
+        <button (click)="runAnalysis()" class="btn btn-primary" [disabled]="loading">
+          <span *ngIf="loading" class="spinner-inline"></span>
+          {{ loading ? 'Analizowanie...' : 'Uruchom Analizę TRIZ & Analogii' }}
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Loading State -->
+  <div *ngIf="loading" class="loading-state">
+    <div class="spinner-container">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+    <h3>Uruchamianie łańcucha wnioskowania R&D...</h3>
+    <div class="loading-steps">
+      <div class="loading-step active">
+        <span class="step-dot"></span> Formułowanie sprzeczności technicznej
+      </div>
+      <div class="loading-step active">
+        <span class="step-dot animate-pulse-soft"></span> Generowanie kandydatów metodą TRIZ (Kontradykcja)
+      </div>
+      <div class="loading-step">
+        <span class="step-dot"></span> Generowanie kandydatów metodą Analogii
+      </div>
+      <div class="loading-step">
+        <span class="step-dot"></span> Ocena wielokryterialna i optymalizacja
+      </div>
+    </div>
+  </div>
+
+  <!-- Results Dashboard -->
+  <div *ngIf="result && !loading" class="results-dashboard animate-fade-in">
+    
+    <!-- Step 2: Technical Contradiction -->
+    <section class="panel contradiction-panel">
+      <div class="panel-header">
+        <h2>2. Sformułowanie Sprzeczności Technicznej</h2>
+        <span class="step-indicator">Krok II</span>
+      </div>
+      <div class="panel-body grid-2">
+        <div class="parameter-card improving">
+          <div class="param-label">Parametr Poprawiany ↑</div>
+          <h3>{{ result.contradiction.improving_parameter }}</h3>
+        </div>
+        <div class="parameter-card worsening">
+          <div class="param-label">Parametr Pogarszany ↓</div>
+          <h3>{{ result.contradiction.worsening_parameter }}</h3>
+        </div>
+        <div class="contradiction-formula">
+          <h4>Wzór Sprzeczności:</h4>
+          <p class="formula-text"><em>"{{ result.contradiction.statement }}"</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 3: Candidates Tabs & Views -->
+    <section class="panel candidates-panel">
+      <div class="panel-header tab-header">
+        <h2>3. Wygenerowane Koncepcje Rozwiązań</h2>
+        <div class="tab-selectors">
+          <button (click)="setTab('triz')" class="tab-btn" [class.active]="activeTab === 'triz'">Metoda TRIZ (3)</button>
+          <button (click)="setTab('analogy')" class="tab-btn" [class.active]="activeTab === 'analogy'">Metoda Analogii (3)</button>
+          <button (click)="setTab('evaluation')" class="tab-btn" [class.active]="activeTab === 'evaluation'">Macierz Oceny (6)</button>
+        </div>
+      </div>
+      
+      <div class="panel-body">
+        <!-- TRIZ TAB -->
+        <div *ngIf="activeTab === 'triz'" class="cards-grid">
+          <div *ngFor="let item of result.triz_candidates; let i = index" class="candidate-card" [class.winner-card-border]="item.id === result.choice.winner_id">
+            <div class="card-header">
+              <span class="card-num">T{{ i+1 }}</span>
+              <h3>{{ item.name }}</h3>
+              <span class="principle-tag">{{ item.principle }}</span>
+            </div>
+            <p class="card-desc">{{ item.description }}</p>
+            <div class="pros-cons">
+              <div class="pro-col">
+                <strong>Zalety:</strong>
+                <ul>
+                  <li *ngFor="let p of item.pros">{{ p }}</li>
+                </ul>
+              </div>
+              <div class="con-col">
+                <strong>Wyzwania:</strong>
+                <ul>
+                  <li *ngFor="let c of item.cons">{{ c }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANALOGY TAB -->
+        <div *ngIf="activeTab === 'analogy'" class="cards-grid">
+          <div *ngFor="let item of result.analogy_candidates; let i = index" class="candidate-card" [class.winner-card-border]="item.id === result.choice.winner_id">
+            <div class="card-header">
+              <span class="card-num">A{{ i+1 }}</span>
+              <h3>{{ item.name }}</h3>
+              <span class="analogy-tag">{{ item.analogy_source }}</span>
+            </div>
+            <p class="card-desc">{{ item.description }}</p>
+            <div class="pros-cons">
+              <div class="pro-col">
+                <strong>Zalety:</strong>
+                <ul>
+                  <li *ngFor="let p of item.pros">{{ p }}</li>
+                </ul>
+              </div>
+              <div class="con-col">
+                <strong>Wyzwania:</strong>
+                <ul>
+                  <li *ngFor="let c of item.cons">{{ c }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EVALUATION MATRIX TAB -->
+        <div *ngIf="activeTab === 'evaluation'" class="matrix-container">
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th>Rozwiązanie</th>
+                <th>Wykonalność</th>
+                <th>Efektywność En.</th>
+                <th>Opłacalność</th>
+                <th>Adaptacyjność</th>
+                <th>Cele SDG</th>
+                <th class="highlight-col">Suma</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of result.evaluation" [class.winner-row]="row.candidate_id === result.choice.winner_id">
+                <td class="candidate-name-col">
+                  <strong>{{ row.candidate_name }}</strong>
+                  <span class="row-id-badge">{{ row.candidate_id }}</span>
+                </td>
+                <td><span class="score-badge" [attr.data-score]="row.feasibility">{{ row.feasibility }}/10</span></td>
+                <td><span class="score-badge" [attr.data-score]="row.energy_efficiency">{{ row.energy_efficiency }}/10</span></td>
+                <td><span class="score-badge" [attr.data-score]="row.cost_effectiveness">{{ row.cost_effectiveness }}/10</span></td>
+                <td><span class="score-badge" [attr.data-score]="row.adaptability">{{ row.adaptability }}/10</span></td>
+                <td><span class="score-badge" [attr.data-score]="row.sdg_alignment">{{ row.sdg_alignment }}/10</span></td>
+                <td class="highlight-col"><strong>{{ row.total_score }} pkt</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 4: Final Selection & Reasoning Trail -->
+    <section class="panel winner-panel">
+      <div class="panel-header">
+        <h2>4. Rekomendacja i Decyzja R&D</h2>
+        <span class="winner-badge">Wybrana Koncepcja</span>
+      </div>
+      <div class="panel-body">
+        <div class="winner-info-card">
+          <div class="winner-medal">👑</div>
+          <div class="winner-text">
+            <span class="winner-id">{{ result.choice.winner_id }}</span>
+            <h3>{{ result.choice.winner_name }}</h3>
+          </div>
+        </div>
+        <div class="justification-trail">
+          <h4>Uzasadnienie Inżynieryjne:</h4>
+          <p>{{ result.choice.justification }}</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

@@ -55,3 +55,8 @@ class MCP:
             return getattr(first_content, "text", first_content)
 
         return result
+
+
+class AnalogyMCP(MCP):
+    def __init__(self, url: str = "http://localhost:8124/mcp"):
+        super().__init__(url)

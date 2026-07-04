@@ -1,0 +1,123 @@
+{
+    "$schema": "https://design-tokens.github.io/community-group/format/tokens.schema.json",
+    "color": {
+        "background": {
+            "primary": {
+                "$type": "color",
+                "$value": "#F7F8F4",
+                "$description": "Main background — light cream"
+            },
+            "surface": {
+                "$type": "color",
+                "$value": "#FFFFFF",
+                "$description": "Card background — white"
+            }
+        },
+        "text": {
+            "primary": {
+                "$type": "color",
+                "$value": "#2F3A3D",
+                "$description": "Primary text — graphite"
+            },
+            "secondary": {
+                "$type": "color",
+                "$value": "#6B7280",
+                "$description": "Secondary text — gray"
+            }
+        },
+        "brand": {
+            "primary": {
+                "$type": "color",
+                "$value": "#6B9080",
+                "$description": "Primary brand color — sage green"
+            }
+        },
+        "action": {
+            "active": {
+                "$type": "color",
+                "$value": "#4A7C59",
+                "$description": "Active buttons — dark green"
+            },
+            "hover": {
+                "$type": "color",
+                "$value": "#3B6848",
+                "$description": "Hover state — darker green"
+            }
+        },
+        "accent": {
+            "warm": {
+                "$type": "color",
+                "$value": "#E9B44C",
+                "$description": "Warm accent — soft amber"
+            },
+            "cool": {
+                "$type": "color",
+                "$value": "#6DAEDB",
+                "$description": "Cool accent — muted blue"
+            }
+        }
+    },
+    "font": {
+        "family": {
+            "base": {
+                "$type": "fontFamily",
+                "$value": "Poppins",
+                "$description": "Base font family for the application"
+            }
+        },
+        "weight": {
+            "normal": {
+                "$type": "fontWeight",
+                "$value": 400,
+                "$description": "Poppins Regular (400)"
+            },
+            "bold": {
+                "$type": "fontWeight",
+                "$value": 700,
+                "$description": "Poppins Bold (700)"
+            }
+        },
+        "style": {
+            "italic": {
+                "$type": "fontStyle",
+                "$value": "italic",
+                "$description": "Poppins Italic (400i)"
+            }
+        }
+    },
+    "typography": {
+        "body": {
+            "normal": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{font.family.base}",
+                    "fontWeight": "{font.weight.normal}",
+                    "fontSize": "16px",
+                    "lineHeight": "1.5"
+                },
+                "$description": "Base body text — Poppins Regular 400"
+            },
+            "bold": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{font.family.base}",
+                    "fontWeight": "{font.weight.bold}",
+                    "fontSize": "16px",
+                    "lineHeight": "1.5"
+                },
+                "$description": "Bold text — Poppins Bold 700"
+            },
+            "italic": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{font.family.base}",
+                    "fontWeight": "{font.weight.normal}",
+                    "fontStyle": "{font.style.italic}",
+                    "fontSize": "16px",
+                    "lineHeight": "1.5"
+                },
+                "$description": "Italic text — Poppins Italic 400i"
+            }
+        }
+    }
+}

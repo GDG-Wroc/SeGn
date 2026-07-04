@@ -1,1 +1,880 @@
-{}
+{
+  "apps/my-hackathon-app-e2e": {
+    "root": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "metadata.targetGroups": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "metadata.targetGroups.E2E (CI)": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "metadata.targetGroups.E2E (CI).0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "metadata.targetGroups.E2E (CI).1": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "metadata.targetGroups.E2E (CI).2": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.metadata": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.dependsOn.0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.dependsOn": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.cache": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.inputs.0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.inputs.1": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.inputs.2": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.inputs.3": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.inputs": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.outputs.0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.outputs.1": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.outputs": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.executor": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.options.cwd": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.options.command": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.options": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.metadata.technologies": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.metadata.technologies.0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.metadata.description": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.metadata.help": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.metadata.help.command": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e.metadata.help.example": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.metadata": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.dependsOn.0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.dependsOn": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.cache": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.inputs.0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.inputs.1": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.inputs.2": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.inputs.3": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.inputs": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.outputs.0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.outputs.1": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.outputs": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.executor": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.options.cwd": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.options.env": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.options.command": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.options": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.metadata.technologies": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.metadata.technologies.0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.metadata.description": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.metadata.help": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.metadata.help.command": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--src/example.spec.ts.metadata.help.example": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.executor": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.cache": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.inputs.0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.inputs.1": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.inputs.2": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.inputs.3": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.inputs": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.outputs.0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.outputs.1": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.outputs": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.dependsOn.0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.dependsOn": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.metadata": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.metadata.technologies": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.metadata.technologies.0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.metadata.description": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.metadata.nonAtomizedTarget": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.metadata.help": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.metadata.help.command": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci.metadata.help.example": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.executor": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.continuous": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.cache": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.inputs.0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.inputs.1": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.inputs.2": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.inputs.3": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.inputs": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.outputs.0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.outputs": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.metadata": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.options.config": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.options.expectedSuites": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.options": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.metadata.technologies": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.metadata.technologies.0": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.e2e-ci--merge-reports.metadata.description": [
+      "apps/my-hackathon-app-e2e/playwright.config.mts",
+      "@nx/playwright/plugin"
+    ],
+    "targets.lint": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.cache": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs.0": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs.1": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs.2": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs.3": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs.4": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs.5": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.outputs.0": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.outputs": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.executor": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.cwd": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.command": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies.0": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.description": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.command": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.example": [
+      "apps/my-hackathon-app-e2e/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "apps/my-hackathon-app-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "apps/my-hackathon-app-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "apps/my-hackathon-app-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "apps/my-hackathon-app-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "// targets": [
+      "apps/my-hackathon-app-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "implicitDependencies": [
+      "apps/my-hackathon-app-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "implicitDependencies.my-hackathon-app": [
+      "apps/my-hackathon-app-e2e/project.json",
+      "nx/core/project-json"
+    ]
+  },
+  "apps/my-hackathon-app": {
+    "root": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets": [
+      "apps/my-hackathon-app/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs.0": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs.1": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs.2": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs.3": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs.4": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs.5": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.executor": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.command": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.dependsOn.0": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.inputs.0": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.inputs.1": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs.0": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs.1": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "name": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.executor": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.outputs.0": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.outputs": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.defaultConfiguration": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.outputPath": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.browser": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.tsConfig": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.assets.0": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.assets": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.styles.0": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.styles": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.production.budgets.0": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.production.budgets.1": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.production.budgets": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.production.outputHashing": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.production": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.development.optimization": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.development.extractLicenses": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.development.sourceMap": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.development": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.continuous": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.executor": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.defaultConfiguration": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.production.buildTarget": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.production": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.development.buildTarget": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.development": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.watch": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve-static": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve-static.continuous": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve-static.executor": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve-static.options.buildTarget": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve-static.options.port": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve-static.options.staticFilePath": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve-static.options.spa": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve-static.options": [
+      "apps/my-hackathon-app/project.json",
+      "nx/core/project-json"
+    ]
+  },
+  ".": {
+    "root": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.cache": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs.0": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs.1": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs.2": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs.3": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs.4": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.outputs.0": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.outputs": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.executor": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.cwd": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.command": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies.0": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.description": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.command": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.example": [
+      "eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ]
+  }
+}

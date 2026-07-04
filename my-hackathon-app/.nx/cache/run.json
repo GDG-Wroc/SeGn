@@ -1,0 +1,21 @@
+{
+  "run": {
+    "command": "nx serve my-hackathon-app",
+    "startTime": "2026-07-04T14:02:04.523Z",
+    "endTime": "2026-07-04T14:15:10.986Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "my-hackathon-app:serve:development",
+      "target": "serve",
+      "projectName": "my-hackathon-app",
+      "hash": "4003063039136490454",
+      "startTime": "2026-07-04T14:02:04.774Z",
+      "endTime": "2026-07-04T14:15:10.971Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    }
+  ]
+}
